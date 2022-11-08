@@ -1,0 +1,87 @@
+<section>
+    <div class="page-header min-vh-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto mt-6">
+            <img src="/img/asoc-banner.png" class="navbar-brand-img h-100" alt="main_logo">
+            {{#if success_msg }}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
+                <span class="alert-text text-white"><strong>¡Enhorabuena! -</strong> {{ success_msg }}</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {{/if}}
+            {{#if error}}
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <span class="alert-icon text-white"><i class="ni ni-support-16"></i></span>
+                  <span class="alert-text text-white"><strong>¡Hey! -</strong> {{error}}</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+            {{/if}}
+            {{#each errors }}
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <span class="alert-icon text-white"><i class="ni ni-support-16"></i></span>
+                  <span class="alert-text text-white"><strong>¡Hey! -</strong> {{text}}</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+            {{/each}}
+            {{#if error_msg }}
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <span class="alert-icon text-white"><i class="ni ni-support-16"></i></span>
+                  <span class="alert-text text-white"><strong>¡Hey! -</strong> {{error_msg}}</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+            {{/if}}
+            <div class="card card-plain">
+              <div class="card-header pb-0 text-left">
+                <h2 class="font-weight-bolder text-warning text-gradient">Registro-admin</h2>
+                <p class="mb-0">Ingrese su correo electrónico y contraseña para el registro</p>
+              </div>
+              <div class="card-body">
+                <form action="/signup" method="POST">
+                    <label class="text-dark">Correo Electrónico</label>
+                    <div class="mb-1">
+                      <input type="email" name="email" class="form-control" placeholder="Correo Electrónico" aria-label="Email" aria-describedby="email-addon">
+                    </div>
+                    <label class="text-dark">Contraseña</label>
+                    <div class="mb-1">
+                      <input type="password" name="password" class="form-control" placeholder="Contraseña" aria-label="Password" aria-describedby="password-addon">
+                    </div>
+                    <label class="text-dark">Repetir Contraseña</label>
+                    <div class="mb-1">
+                      <input type="password" name="confirm_password" class="form-control" placeholder="Repetir Contraseña..." aria-label="Password" aria-describedby="password-addon">
+                    </div>
+                    <label class="text-dark">Código de Validación</label>
+                    <div class="mb-1">
+                      <input type="password" name="validcode" class="form-control" placeholder="Código de Validación" aria-label="Password" aria-describedby="password-addon">
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn bg-gradient-warning w-100 mt-4 mb-0">Iniciar Sesión</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                <p class="mb-4 text-sm mx-auto">
+                  ¿Ya tienes una cuenta?</br>
+                  <a href="/" class="text-primary text-gradient font-weight-bold">Inicia sesión como Administrador</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+<div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+<div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('/img/FB_IMG_166230077814.jpg')"></div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </section>
