@@ -24,11 +24,10 @@ export const signupPOST = async (req, res) => {
     } else {
       // Look for email coincidence
       const emailUser = await Admin.findOne({ email: email });
-      const validcodeUser = await "dp0wF8szp12";
       if (emailUser) {
         req.flash("error_msg", "El correo electrónico ya está en uso.");
         res.redirect("/signup");
-      } else if (validcodeUser != validcode){
+      } else if (process.env.VALID_CODE != validcode){
         req.flash("error_msg", "El código de validación es incorrecto.");
         res.redirect("/signup");
       } else {
