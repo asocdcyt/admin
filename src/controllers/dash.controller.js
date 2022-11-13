@@ -71,10 +71,10 @@ export const curseDesingGraphic = async (req, res) => {
         const sC3 = "Photoshop Desde Cero: Principios De La Edición Digital"
         const allData = await Curse.find({curse: sC1}).sort({ date: "desc" })
         .lean();
-        const numOfDocs = await Curse.estimatedDocumentCount(numOfDocs);
-        const numOfDocsPen = await Curse.find({status: sPe}).count();
-        const numOfDocsCon = await Curse.find({status: sCo}).count();
-        const numOfDocsRech = await Curse.find({status: sRe}).count();
+        const numOfDocs = await Curse.find({curse: sC1}).count();
+        const numOfDocsPen = await Curse.find({curse: sC1, status: sPe}).count();
+        const numOfDocsCon = await Curse.find({curse: sC1, status: sCo}).count();
+        const numOfDocsRech = await Curse.find({curse: sC1, status: sRe}).count();
         res.render("admin/curses", { allData, title: "Admin", numOfDocs, numOfDocsPen, numOfDocsCon, numOfDocsRech });
     } catch (error) {
         console.log(error);
@@ -90,10 +90,10 @@ export const curseBranding = async (req, res) => {
         const sC3 = "Photoshop Desde Cero: Principios De La Edición Digital"
         const allData = await Curse.find({curse: sC2}).sort({ date: "desc" })
         .lean();
-        const numOfDocs = await Curse.estimatedDocumentCount(numOfDocs);
-        const numOfDocsPen = await Curse.find({status: sPe}).count();
-        const numOfDocsCon = await Curse.find({status: sCo}).count();
-        const numOfDocsRech = await Curse.find({status: sRe}).count();
+        const numOfDocs = await Curse.find({curse: sC2}).count();
+        const numOfDocsPen = await Curse.find({curse: sC2, status: sPe}).count();
+        const numOfDocsCon = await Curse.find({curse: sC2, status: sCo}).count();
+        const numOfDocsRech = await Curse.find({curse: sC2, status: sRe}).count();
         res.render("admin/curses", { allData, title: "Admin", numOfDocs, numOfDocsPen, numOfDocsCon, numOfDocsRech });
     } catch (error) {
         console.log(error);
@@ -110,10 +110,10 @@ export const cursePhotoshop = async (req, res) => {
         const sC3 = "Photoshop Desde Cero: Principios De La Edición Digital"
         const allData = await Curse.find({curse: sC3}).sort({ date: "desc" })
         .lean();
-        const numOfDocs = await Curse.estimatedDocumentCount(numOfDocs);
-        const numOfDocsPen = await Curse.find({status: sPe}).count();
-        const numOfDocsCon = await Curse.find({status: sCo}).count();
-        const numOfDocsRech = await Curse.find({status: sRe}).count();
+        const numOfDocs = await Curse.find({curse: sC3}).count();
+        const numOfDocsPen = await Curse.find({curse: sC3, status: sPe}).count();
+        const numOfDocsCon = await Curse.find({curse: sC3, status: sCo}).count();
+        const numOfDocsRech = await Curse.find({curse: sC3, status: sRe}).count();
         res.render("admin/curses", { allData, title: "Admin", numOfDocs, numOfDocsPen, numOfDocsCon, numOfDocsRech });
     } catch (error) {
         console.log(error);
