@@ -4,7 +4,7 @@ import Request from "../models/Request";
 
 export const data = async (req, res) => {
     try {
-        res.render("admin/data");
+        res.render("admin/data", { title: "Data"});
     } catch (error) {
         console.log(error);
     }
